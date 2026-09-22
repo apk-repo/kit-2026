@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cill Dara RFC — Kit Sizes</title>
+ 
+<!-- ======================================================================
+     EDIT THIS ONE LINE. Paste your Apps Script /exec URL between the quotes.
+     ====================================================================== -->
+<script>var APP = "https://script.google.com/macros/s/AKfycbzyFVJ9-rvJavqrYPct-dMORGox4nLgx7L_BDMTSAh9EVKHyCd42MplGizIenKk47G1/exec";</script>
+ 
+<style>
+  :root{--ink:#141210;--gold:#D4A53C;--red:#B2332A;--paper:#F4F1EA;--muted:#5A5750}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;
+       display:flex;align-items:center;justify-content:center;padding:28px;text-align:center;line-height:1.5}
+  .card{max-width:420px}
+  h1{font-size:30px;font-weight:800;line-height:1.1;margin-bottom:10px}
+  p{color:var(--muted);font-size:15px}
+  a.btn{display:inline-block;margin-top:22px;background:var(--ink);color:var(--gold);text-decoration:none;
+        font-weight:700;font-size:16px;padding:15px 26px;border-radius:9px}
+  .warn{margin-top:22px;font-size:14px;color:var(--red)}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>New kit: pick your sizes</h1>
+    <p id="msg">Taking you there…</p>
+    <a class="btn" id="go" href="#">Open kit sizes</a>
+    <p class="warn" id="warn" hidden>This page has not been set up yet — the app link is still a placeholder.</p>
+  </div>
+<script>
+(function () {
+  if (APP.indexOf('http') !== 0) {
+    document.getElementById('msg').textContent = '';
+    document.getElementById('go').setAttribute('hidden', '');
+    document.getElementById('warn').removeAttribute('hidden');
+    return;
+  }
+  document.getElementById('go').href = APP;
+  window.location.replace(APP);
+})();
+</script>
+</body>
+</html>
